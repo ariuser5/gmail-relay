@@ -1,5 +1,5 @@
-﻿const string TOKENS_PATH = @"nonpublic\tokens";
-const string CREDENTIALS_PATH = @"nonpublic\gmail_api_credentials.json";
+﻿const string TOKENS_PATH = @"secrets\tokens";
+const string CREDENTIALS_PATH = @"secrets\gmail_api_credentials.json";
 const string USER_ACCOUNT_VARNAME = "MAIN_GMAIL_ADDRESS";
 
 string USER_ACCOUNT = Environment.GetEnvironmentVariable(
@@ -21,7 +21,7 @@ if (credential == null) {
 }
 
 try {
-	PollingService pollingService = new();
+	EmailPollingService pollingService = new();
 	
 	await foreach (
 		IEnumerable<MimeKit.MimeMessage> newMessages

@@ -1,4 +1,4 @@
-public class PollingService
+public class EmailPollingService
 {
     const string PUBLIC_APP_NAME_PATH = @"nonpublic\app_public_name.txt";
     
